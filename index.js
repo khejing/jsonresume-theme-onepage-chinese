@@ -2,6 +2,10 @@ var fs = require("fs");
 var Handlebars = require("handlebars");
 var utils = require('jsonresume-themeutils');
 
+utils.setConfig({
+    date_format: 'YYYY年MMM'
+});
+
 COURSES_COLUMNS = 3;
 
 PREPEND_SUMMARY_CATEGORIES = [
