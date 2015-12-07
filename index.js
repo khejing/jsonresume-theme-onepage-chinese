@@ -1,10 +1,13 @@
 var fs = require("fs");
 var Handlebars = require("handlebars");
+var moment = require("moment");
+moment.locale('zh-cn');
 
 COURSES_COLUMNS = 3;
 
 PREPEND_SUMMARY_CATEGORIES = [
   "work",
+  "education",
   "volunteer",
   "awards",
   "publications"
@@ -47,6 +50,10 @@ function render(resume) {
           delete block.summary;
         }*/
       });
+      resume[category].startDate = moment(resume[category].startDate).format("YYYY年MMM");
+      if(resume[category].endDate){
+          resume[category].endDate = moment(resume[category].endDate).format("YYYY年MMM");
+      }
     }
   });
 
