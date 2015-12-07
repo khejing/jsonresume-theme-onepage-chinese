@@ -40,6 +40,14 @@
         </span>
       {{/location}}
     </div>
+    {{#if website}}
+      <div id='profilesBlock'>
+        <span class='url'>
+          <a href='{{website}}'>{{website}}</a>
+        </span>
+      </div>
+    {{/if}}
+    {{!--
     {{#if profiles.length}}
       <div id='profilesBlock'>
         {{#each profiles}}
@@ -52,6 +60,7 @@
       {{/each}}
       </div>
     {{/if}}
+    --}}
   </div>
   <div class='sectionLine'></div>
 	{{/resume.basics}}
@@ -86,7 +95,8 @@
 	        </span>
 	        {{/if}}
 	      </div>
-	      <div><a href='{{website}}'>{{website}}</a></div>
+          {{#if website}}<div><a href='{{website}}'>{{website}}</a></div>{{/if}}
+          <div class="summary">{{summary}}</div>
 	      {{#if highlights.length}}
 	      <ul class='highlights'>
 	        {{#each highlights}}
