@@ -1,7 +1,6 @@
 var fs = require("fs");
 var Handlebars = require("handlebars");
-var moment = require("moment");
-moment.locale('zh-cn');
+var utils = require('jsonresume-themeutils');
 
 COURSES_COLUMNS = 3;
 
@@ -49,9 +48,9 @@ function render(resume) {
           block.highlights.unshift(block.summary);
           delete block.summary;
         }*/
-        block.startDate = moment(block.startDate).format("YYYY年MMM");
+        block.startDate = utils.getFormattedDate(block.startDate);
         if(block.endDate){
-            block.endDate = moment(block.endDate).format("YYYY年MMM");
+            block.endDate = utils.getFormattedDate(block.endDate);
         }
       });
     }

@@ -11,7 +11,7 @@
   "dependencies": {
     "css": "2.2.x",
     "handlebars": "^2.0.0-alpha.4",
-    "moment": "^2.10.6"
+    "jsonresume-themeutils": "khejing/theme-utils"
   },
   "bugs": {
     "url": "https://github.com/ainsleychong/jsonresume-theme-onepage/issues"
