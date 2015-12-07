@@ -49,11 +49,11 @@ function render(resume) {
           block.highlights.unshift(block.summary);
           delete block.summary;
         }*/
+        block.startDate = moment(block.startDate).format("YYYY年MMM");
+        if(block.endDate){
+            block.endDate = moment(block.endDate).format("YYYY年MMM");
+        }
       });
-      resume[category].startDate = moment(resume[category].startDate).format("YYYY年MMM");
-      if(resume[category].endDate){
-          resume[category].endDate = moment(resume[category].endDate).format("YYYY年MMM");
-      }
     }
   });
 
