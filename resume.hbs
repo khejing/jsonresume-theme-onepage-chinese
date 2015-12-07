@@ -59,7 +59,7 @@
   {{#if resume.basics.summary}}
   <div id='summaryBlock' class="sectionBlock">
     <div class='sectionName'>
-      <span>SUMMARY</span>
+      <span>自我评价</span>
     </div>
     <div class='sectionContent'>
       <span>{{resume.basics.summary}}</span>
@@ -71,7 +71,7 @@
 	{{#if resume.work.length}}
   <div id='workBlock' class="sectionBlock">
     <div class='sectionName'>
-      <span>EXPERIENCE</span>
+      <span>工作经历</span>
     </div>
     <div class='sectionContent'>
       {{#each resume.work}}
@@ -82,7 +82,7 @@
 	        </span>
 	        {{#if startDate}}
 	        <span class='date'>
-	          {{#if startDate}}{{startDate}}{{/if}}{{#if endDate}}-{{endDate}}{{/if}}
+	          {{#if startDate}}{{startDate}}{{/if}}{{#if endDate}}-{{endDate}}{{else}}-至今{{/if}}
 	        </span>
 	        {{/if}}
 	      </div>
@@ -211,7 +211,7 @@
 	{{#if resume.education.length}}
 	<div id='education' class="sectionBlock">
     <div class='sectionName'>
-      <span>EDUCATION</span>
+      <span>教育经历</span>
     </div>
     <div class='sectionContent'>
       {{#each resume.education}}
@@ -249,12 +249,13 @@
 	{{#if resume.skills.length}}
 	<div id='skills' class="sectionBlock">
     <div class='sectionName'>
-      <span>SKILLS</span>
+      <span>技能清单</span>
     </div>
     <div class='sectionContent'>
       {{#each resume.skills}}
       <div class='skillBlock'>
-        <span class='title'>{{#if name}}{{name}}{{/if}}{{#if level}} <em>({{level}})</em>{{/if}}:</span>
+        {{!-- {{#if level}} <em>({{level}})</em>{{/if}} --}}
+        <span class='title'>{{#if name}}{{name}}{{/if}}:</span>
         {{#if keywords.length}}
           {{#each keywords}}
           <span>{{.}}</span>{{#unless @last}}, {{/unless}}
@@ -275,13 +276,14 @@
 	{{#if resume.languages.length}}
 	<div id='languages' class="sectionBlock">
     <div class='sectionName'>
-      <span>LANGUAGES</span>
+      <span>语言能力</span>
     </div>
     <div class='sectionContent'>
       {{#each resume.languages}}
       <span class='language'>{{language}}</span>
       {{#if fluency}}
-      <span class='fluency'><em>({{fluency}})</em></span>
+      {{!-- <em></em> --}}
+      <span class='fluency'>({{fluency}})</span>
       {{/if}}
       {{#unless @last}}<span>,</span>{{/unless}}
       {{/each}}
