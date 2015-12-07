@@ -264,8 +264,8 @@
     <div class='sectionContent'>
       {{#each resume.skills}}
       <div class='skillBlock'>
-        {{!-- {{#if level}} <em>({{level}})</em>{{/if}} --}}
-        <span class='title'>{{#if name}}{{name}}{{/if}}:</span>
+        {{!-- {{#if level}} <em>({{level}})</em>{{/if}} class='title' --}}
+        <span>{{#if name}}{{name}}{{/if}}:</span>
         {{#if keywords.length}}
           {{#each keywords}}
           <span>{{.}}</span>{{#unless @last}}, {{/unless}}
