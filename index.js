@@ -56,6 +56,9 @@ function render(resume) {
         if(block.endDate){
             block.endDate = utils.getFormattedDate(block.endDate);
         }
+        if(block.date){
+            block.date = utils.getFormattedDate(block.date);
+        }
       });
     }
   });
